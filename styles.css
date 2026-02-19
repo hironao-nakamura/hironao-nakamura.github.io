@@ -1,0 +1,406 @@
+/* ==========================================================================
+   Hironao Nakamura — Personal Page
+   
+   Inherits MELQI LTD design system:
+   - "引き算の設計" — Less is more, silence speaks
+   - Near-black (#111111), never pure black (#000)
+   - Generous vertical breathing
+   - Left-aligned gravity
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   CSS Custom Properties
+   -------------------------------------------------------------------------- */
+:root {
+  /* Colors — Neutral near-black palette */
+  --color-bg: #FFFFFF;
+  --color-text-primary: #111111;
+  --color-text-secondary: #5A5A5A;
+  --color-text-muted: #8A8A8A;
+  --color-border: #E5E5E5;
+  
+  /* Typography */
+  --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-size-base: 16px;
+  --font-size-small: 15px;
+  --line-height: 1.6;
+  
+  /* Layout */
+  --max-width: 720px;
+  --spacing-xs: 8px;
+  --spacing-sm: 16px;
+  --spacing-md: 24px;
+  --spacing-lg: 48px;
+  --spacing-xl: 72px;
+}
+
+/* --------------------------------------------------------------------------
+   Base Reset & Typography
+   -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: var(--font-size-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-stack);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg);
+}
+
+/* --------------------------------------------------------------------------
+   Main Container
+   -------------------------------------------------------------------------- */
+main {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--spacing-lg) 20px 0 20px;
+}
+
+/* --------------------------------------------------------------------------
+   Hero Section
+   -------------------------------------------------------------------------- */
+.hero {
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-lg);
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  width: 80%;
+  height: 1px;
+  background-color: var(--color-border);
+}
+
+.hero-content {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+}
+
+.hero-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  background-color: var(--color-border);
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text-primary);
+}
+
+.hero .tagline {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-xs);
+  max-width: 540px;
+}
+
+.hero .tagline strong {
+  font-weight: 500;
+}
+
+.hero .location {
+  font-size: var(--font-size-small);
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-xs);
+}
+
+.hero .links-inline {
+  font-size: var(--font-size-small);
+  color: var(--color-text-muted);
+}
+
+.hero a {
+  color: var(--color-text-muted);
+  text-decoration: underline;
+  text-decoration-color: var(--color-border);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+
+.hero a:hover {
+  color: var(--color-text-primary);
+  text-decoration-color: var(--color-text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   Sections
+   -------------------------------------------------------------------------- */
+.section {
+  margin-bottom: var(--spacing-lg);
+}
+
+.section:last-of-type {
+  margin-bottom: 0;
+}
+
+.section h2 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: var(--spacing-md);
+}
+
+/* --------------------------------------------------------------------------
+   Description paragraphs
+   -------------------------------------------------------------------------- */
+.description {
+  color: var(--color-text-primary);
+  max-width: 640px;
+  margin-bottom: var(--spacing-sm);
+}
+
+.description:last-child {
+  margin-bottom: 0;
+}
+
+.description strong {
+  font-weight: 500;
+}
+
+.section a {
+  color: var(--color-text-primary);
+  text-decoration: underline;
+  text-decoration-color: var(--color-border);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  transition: text-decoration-color 0.15s ease;
+}
+
+.section a:hover {
+  text-decoration-color: var(--color-text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   Generic list styles
+   -------------------------------------------------------------------------- */
+.timeline-list,
+.research-list,
+.software-list,
+.skills-list,
+.awards-list {
+  list-style: none;
+}
+
+.timeline-list li,
+.research-list li,
+.software-list li,
+.skills-list li,
+.awards-list li {
+  position: relative;
+  padding-left: 1em;
+  margin-bottom: 0.75em;
+  line-height: 1.5;
+  color: var(--color-text-primary);
+}
+
+.timeline-list li::before,
+.research-list li::before,
+.software-list li::before,
+.skills-list li::before,
+.awards-list li::before {
+  content: "·";
+  position: absolute;
+  left: 0;
+  color: var(--color-text-muted);
+}
+
+.timeline-list li:last-child,
+.research-list li:last-child,
+.software-list li:last-child,
+.skills-list li:last-child,
+.awards-list li:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-list strong,
+.research-list strong,
+.software-list strong,
+.skills-list strong,
+.publications strong {
+  font-weight: 500;
+}
+
+/* --------------------------------------------------------------------------
+   Publications
+   -------------------------------------------------------------------------- */
+.publications {
+  list-style: none;
+}
+
+.publications li {
+  position: relative;
+  padding-left: 1em;
+  margin-bottom: 0.75em;
+  line-height: 1.5;
+}
+
+.publications li::before {
+  content: "·";
+  position: absolute;
+  left: 0;
+  color: var(--color-text-muted);
+}
+
+.publications li:last-child {
+  margin-bottom: 0;
+}
+
+.pub-link {
+  color: #8A8A8A;
+}
+
+.pub-link a {
+  color: #8A8A8A !important;
+  text-decoration: underline;
+  text-decoration-color: #E5E5E5;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+
+.pub-link a:hover {
+  color: #111111 !important;
+  text-decoration-color: #8A8A8A;
+}
+
+/* --------------------------------------------------------------------------
+   Links
+   -------------------------------------------------------------------------- */
+.links-list {
+  list-style: none;
+}
+
+.links-list li {
+  margin-bottom: 0.5em;
+}
+
+.links-list li:last-child {
+  margin-bottom: 0;
+}
+
+.links-list a {
+  color: var(--color-text-primary);
+  text-decoration: underline;
+  text-decoration-color: var(--color-border);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  transition: text-decoration-color 0.15s ease;
+}
+
+.links-list a:hover {
+  text-decoration-color: var(--color-text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   Footer
+   -------------------------------------------------------------------------- */
+.footer {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: var(--spacing-sm) auto 0 auto;
+  padding: 6px 20px;
+  border-top: 1px solid var(--color-border);
+}
+
+.footer p {
+  font-size: var(--font-size-small);
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+/* --------------------------------------------------------------------------
+   Focus states — Accessibility
+   -------------------------------------------------------------------------- */
+a:focus-visible {
+  outline: 2px solid var(--color-text-primary);
+  outline-offset: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive
+   -------------------------------------------------------------------------- */
+
+/* Mobile (default) */
+@media (max-width: 599px) {
+  :root {
+    --spacing-lg: 32px;
+    --spacing-xl: 48px;
+  }
+  
+  .hero-photo {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .hero h1 {
+    font-size: 1.75rem;
+  }
+  
+  .footer {
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-lg);
+    padding-bottom: var(--spacing-lg);
+  }
+}
+
+/* Tablet and up */
+@media (min-width: 600px) {
+  main {
+    padding: var(--spacing-xl) 32px;
+  }
+  
+  .hero h1 {
+    font-size: 2.25rem;
+  }
+  
+  .footer {
+    padding: var(--spacing-xl) 32px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  main {
+    padding: var(--spacing-xl) 20px;
+    padding-top: 96px;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .section {
+    margin-bottom: 80px;
+  }
+}
