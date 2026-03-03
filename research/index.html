@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no, address=no">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Research Programme — Hironao Nakamura</title>
+  <meta name="description" content="A topos-theoretic approach to AI agent safety: from mathematical foundations to benchmark-validated systems.">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <main>
+    <header class="page-header">
+      <a href="../" class="back-link">← Hironao Nakamura</a>
+      <h1>Research Programme</h1>
+      <p class="subtitle">A topos-theoretic approach to AI agent safety: from mathematical foundations to benchmark-validated systems.</p>
+    </header>
+
+    <!-- About -->
+    <section class="section" aria-labelledby="about">
+      <h2 id="about">About</h2>
+      <p class="description">The central question is: <em>can we give AI agents formal safety guarantees that compose over arbitrary traces?</em> The approach rests on two mathematical foundations: a topos-theoretic account of how observation and concepts relate, and a coalgebraic treatment of processes that never stabilise. From these, it passes through three concrete sub-problems identified in the AGI foundations literature and arrives at a single implementation validated on independent benchmarks. See also: <a href="origin/">origin</a>.</p>
+    </section>
+
+    <!-- Flow diagram -->
+    <div class="flow">
+
+      <!-- Layer 1: Foundations -->
+      <section class="flow-layer" aria-labelledby="foundations">
+        <div class="flow-label"><span>Foundations</span></div>
+        <div class="flow-body">
+          <h3 id="foundations">Mathematical basis</h3>
+          <div class="paper-grid">
+            <div class="paper-card">
+              <p class="paper-title">Observation is a Topos, Not a Type</p>
+              <p class="paper-desc">Observation and concept as topos-valued structures; the interface between what an agent sees and how it reasons.</p>
+              <p class="paper-meta">2025 · <a href="https://zenodo.org/records/17894227" target="_blank" rel="noopener">Zenodo</a></p>
+            </div>
+            <div class="paper-card">
+              <p class="paper-title">Structural Infinity</p>
+              <p class="paper-desc">Coalgebraic treatment of infinite and non-stabilising update semantics.</p>
+              <p class="paper-meta">2025 · <a href="https://zenodo.org/records/17905536" target="_blank" rel="noopener">Zenodo</a></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="flow-connector" aria-hidden="true">
+        <div class="connector-line"></div>
+        <div class="connector-label">intersects with</div>
+      </div>
+
+      <!-- Layer 2: External intersection -->
+      <section class="flow-layer flow-layer--external" aria-labelledby="intersection">
+        <div class="flow-label"><span>External context</span></div>
+        <div class="flow-body">
+          <h3 id="intersection">Three open problems</h3>
+          <p class="description"><a href="https://link.springer.com/chapter/10.1007/978-3-030-93758-4_19" target="_blank" rel="noopener">Potapov &amp; Bogdanov</a> (14th International Conference on Artificial General Intelligence, 2021), <em>"Univalent Foundations of AGI are (not) All You Need"</em>, identify three problems that any foundational theory of AGI must address:</p>
+          <div class="problem-row">
+            <div class="problem-tag">① Grounding</div>
+            <div class="problem-tag">② Dynamic type change</div>
+            <div class="problem-tag">③ Heuristics</div>
+          </div>
+        </div>
+      </section>
+
+      <div class="flow-connector" aria-hidden="true">
+        <div class="connector-line"></div>
+        <div class="connector-label">addressed by</div>
+      </div>
+
+      <!-- Layer 3: Approach -->
+      <section class="flow-layer" aria-labelledby="approach">
+        <div class="flow-label"><span>Approach</span></div>
+        <div class="flow-body">
+          <h3 id="approach">Position paper</h3>
+          <div class="paper-card paper-card--wide">
+            <p class="paper-title">Towards Grounding AGI's World Models</p>
+            <p class="paper-desc">Shows how the topos-theoretic foundations address all three problems. Defines the research roadmap.</p>
+            <p class="paper-meta">2025 · <a href="https://zenodo.org/records/17905626" target="_blank" rel="noopener">Zenodo</a></p>
+          </div>
+        </div>
+      </section>
+
+      <div class="flow-connector" aria-hidden="true">
+        <div class="connector-line"></div>
+        <div class="connector-label">one solution per problem</div>
+      </div>
+
+      <!-- Layer 4: Solutions -->
+      <section class="flow-layer" aria-labelledby="solutions">
+        <div class="flow-label"><span>Solutions</span></div>
+        <div class="flow-body">
+          <h3 id="solutions">Problem-specific papers</h3>
+          <div class="paper-grid paper-grid--three">
+            <div class="paper-card">
+              <div class="problem-tag problem-tag--inline">① Grounding</div>
+              <p class="paper-title">Grounded Types as Cross-Layer Invariants</p>
+              <p class="paper-desc">Traceable update witnesses for observation–concept alignment.</p>
+              <p class="paper-meta">2026 · <a href="https://zenodo.org/records/18253007" target="_blank" rel="noopener">Zenodo</a></p>
+              <hr class="card-divider">
+              <p class="paper-title">Interventional Grounding</p>
+              <p class="paper-desc">Counterfactual witnesses for causal grounding audits.</p>
+              <p class="paper-meta">2026 · <a href="https://zenodo.org/records/18358924" target="_blank" rel="noopener">Zenodo</a></p>
+            </div>
+            <div class="paper-card paper-card--pending">
+              <div class="problem-tag problem-tag--inline">② Dynamic type change</div>
+              <p class="paper-title">Completed, pre-release</p>
+              <p class="paper-desc">Type-theoretic account of runtime schema evolution.</p>
+            </div>
+            <div class="paper-card paper-card--pending">
+              <div class="problem-tag problem-tag--inline">③ Heuristics</div>
+              <p class="paper-title">Completed, pre-release</p>
+              <p class="paper-desc">Compositional heuristic structures within the topos framework.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="flow-connector" aria-hidden="true">
+        <div class="connector-line"></div>
+        <div class="connector-label">implemented as</div>
+      </div>
+
+      <!-- Layer 5: Implementation -->
+      <section class="flow-layer" aria-labelledby="implementation">
+        <div class="flow-label"><span>Implementation</span></div>
+        <div class="flow-body">
+          <h3 id="implementation">Software</h3>
+          <div class="impl-stack">
+            <div class="impl-item">
+              <p class="impl-name">TTGOS <span class="impl-badge">OSS</span></p>
+              <p class="impl-desc">Two-Topos Grounding OS — reference implementation of the theoretical framework.</p>
+              <p class="paper-meta"><a href="https://github.com/hironao-nakamura/two-topos-grounding-os" target="_blank" rel="noopener">GitHub</a></p>
+            </div>
+            <div class="impl-arrow" aria-hidden="true">↓</div>
+            <div class="impl-item">
+              <p class="impl-name">TTGOS Guard</p>
+              <p class="impl-desc">Model-agnostic runtime safety layer for AI agents. Derived from the same grounding invariant; deployed as a per-step monitor.</p>
+              <p class="paper-meta"><a href="https://hironao-nakamura.github.io/ttgos-evidence/" target="_blank" rel="noopener">Evidence</a></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="flow-connector" aria-hidden="true">
+        <div class="connector-line"></div>
+        <div class="connector-label">validated on</div>
+      </div>
+
+      <!-- Layer 6: Validation -->
+      <section class="flow-layer" aria-labelledby="validation">
+        <div class="flow-label"><span>Validation</span></div>
+        <div class="flow-body">
+          <h3 id="validation">Benchmark results</h3>
+          <div class="hub-cards">
+            <!-- Card 1: OS-Harm -->
+            <a href="https://hironao-nakamura.github.io/ttgos-evidence/osharm.html" class="hub-card" target="_blank" rel="noopener">
+              <div class="hub-card-header">
+                <span class="hub-card-badge">NeurIPS 2025 Spotlight</span>
+                <span class="hub-card-bench">OS-Harm</span>
+              </div>
+              <div class="hub-card-metric">
+                <span class="hub-card-value">100%</span>
+                <span class="hub-card-label">Execution Safety</span>
+              </div>
+              <div class="hub-card-bars">
+                <div class="hub-bar-row">
+                  <span class="hub-bar-label">Guard</span>
+                  <div class="progress-bar"><div class="progress-fill guard" style="width: 100%"></div></div>
+                </div>
+                <div class="hub-bar-row">
+                  <span class="hub-bar-label">Best baseline</span>
+                  <div class="progress-bar"><div class="progress-fill baseline" style="width: 59%"></div></div>
+                  <span class="hub-bar-value">~59%</span>
+                </div>
+              </div>
+              <div class="hub-card-detail">
+                <p>Guard blocked 100% of harmful tasks; baseline executed ~41%</p>
+              </div>
+              <span class="hub-card-cta">View results &rarr;</span>
+            </a>
+
+            <!-- Card 2: ST-WebAgentBench -->
+            <a href="https://hironao-nakamura.github.io/ttgos-evidence/stweb.html" class="hub-card" target="_blank" rel="noopener">
+              <div class="hub-card-header">
+                <span class="hub-card-badge">IBM Research</span>
+                <span class="hub-card-bench">ST-WebAgentBench</span>
+              </div>
+              <div class="hub-card-metric">
+                <span class="hub-card-value">46.4%</span>
+                <span class="hub-card-label">CuP (SOTA)</span>
+              </div>
+              <div class="hub-card-bars">
+                <div class="hub-bar-row">
+                  <span class="hub-bar-label">Guard</span>
+                  <div class="progress-bar"><div class="progress-fill guard" style="width: 46.4%"></div></div>
+                </div>
+                <div class="hub-bar-row">
+                  <span class="hub-bar-label">Baseline</span>
+                  <div class="progress-bar"><div class="progress-fill baseline" style="width: 19%"></div></div>
+                  <span class="hub-bar-value">19.0%</span>
+                </div>
+              </div>
+              <div class="hub-card-detail">
+                <p>Zero safety violations with 2.4x the task completion of baseline</p>
+              </div>
+              <span class="hub-card-cta">View results &rarr;</span>
+            </a>
+          </div>
+          <p class="description flow-note">The same Guard architecture produces these results across two fundamentally different environments (OS-level and web), suggesting a general approach rather than benchmark-specific tuning. <a href="https://hironao-nakamura.github.io/ttgos-evidence/" target="_blank" rel="noopener">Full evidence &rarr;</a></p>
+        </div>
+      </section>
+
+      <div class="flow-connector" aria-hidden="true">
+        <div class="connector-line"></div>
+        <div class="connector-label">next</div>
+      </div>
+
+      <!-- Layer 8: What's next -->
+      <section class="flow-layer flow-layer--next" aria-labelledby="next">
+        <div class="flow-label"><span>What's next</span></div>
+        <div class="flow-body">
+          <h3 id="next">Research direction</h3>
+          <ul class="next-list">
+            <li>Open-source release of TTGOS Guard and Evidence Pack schema</li>
+            <li>Formalise the admissible-update axioms and witness schema in a proof assistant; prove the core lemma (step-safety implies trace-safety)</li>
+            <li>Extend compositional safety guarantees to long-horizon, multi-step workflows with counterexample-driven refinement</li>
+            <li>Abstract the framework to span both discrete agent traces and continuous dynamical models, connecting with formal verification methods for continuous systems</li>
+          </ul>
+        </div>
+      </section>
+
+    </div><!-- /.flow -->
+
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 Hironao Nakamura</p>
+  </footer>
+</body>
+</html>

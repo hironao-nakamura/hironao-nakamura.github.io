@@ -1,0 +1,694 @@
+/* ==========================================================================
+   Research Program Page
+   
+   Extends MELQI design system:
+   - Near-black (#111111), generous vertical breathing
+   - Left-aligned gravity, max-width 720px
+   - Flow diagram as layered sections with subtle connectors
+   ========================================================================== */
+
+:root {
+  --color-bg: #FFFFFF;
+  --color-text-primary: #111111;
+  --color-text-secondary: #5A5A5A;
+  --color-text-muted: #8A8A8A;
+  --color-border: #E5E5E5;
+  --color-border-strong: #D0D0D0;
+  --color-surface: #FAFAFA;
+  --color-surface-ext: #F5F5F5;
+
+  --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-size-base: 16px;
+  --font-size-small: 15px;
+  --font-size-xs: 13px;
+  --line-height: 1.6;
+
+  --max-width: 720px;
+  --spacing-xs: 8px;
+  --spacing-sm: 16px;
+  --spacing-md: 24px;
+  --spacing-lg: 48px;
+  --spacing-xl: 72px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: var(--font-size-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-stack);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg);
+}
+
+/* --------------------------------------------------------------------------
+   Main Container
+   -------------------------------------------------------------------------- */
+main {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--spacing-lg) 20px 0 20px;
+}
+
+/* --------------------------------------------------------------------------
+   Page Header
+   -------------------------------------------------------------------------- */
+.page-header {
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-lg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.back-link {
+  display: inline-block;
+  font-size: var(--font-size-small);
+  color: var(--color-text-muted);
+  text-decoration: none;
+  margin-bottom: var(--spacing-md);
+  transition: color 0.15s ease;
+}
+
+.back-link:hover {
+  color: var(--color-text-primary);
+}
+
+.page-header h1 {
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text-primary);
+}
+
+.subtitle {
+  color: var(--color-text-secondary);
+  max-width: 640px;
+}
+
+.subtitle em {
+  font-style: italic;
+}
+
+/* --------------------------------------------------------------------------
+   Sections
+   -------------------------------------------------------------------------- */
+.section {
+  margin-bottom: var(--spacing-lg);
+}
+
+.section h2 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: var(--spacing-md);
+}
+
+.description {
+  color: var(--color-text-primary);
+  max-width: 640px;
+  margin-bottom: var(--spacing-sm);
+}
+
+.description:last-child {
+  margin-bottom: 0;
+}
+
+.description em {
+  font-style: italic;
+}
+
+/* --------------------------------------------------------------------------
+   Flow Diagram
+   -------------------------------------------------------------------------- */
+.flow {
+  margin-bottom: var(--spacing-xl);
+}
+
+.flow-layer {
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.flow-layer--external {
+  border-color: var(--color-border-strong);
+  border-style: dashed;
+  background-color: var(--color-surface-ext);
+}
+
+.flow-label {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.flow-layer--external .flow-label {
+  background-color: transparent;
+  border-bottom-color: var(--color-border-strong);
+  border-bottom-style: dashed;
+}
+
+.flow-label span {
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+}
+
+.flow-body {
+  padding: var(--spacing-md);
+}
+
+.flow-body h3 {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+/* --------------------------------------------------------------------------
+   Flow Connectors
+   -------------------------------------------------------------------------- */
+.flow-connector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--spacing-sm) 0;
+}
+
+.connector-line {
+  width: 1px;
+  height: 16px;
+  background-color: var(--color-border-strong);
+}
+
+.connector-label {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  padding: 4px 0;
+}
+
+/* --------------------------------------------------------------------------
+   Paper Cards
+   -------------------------------------------------------------------------- */
+.paper-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-sm);
+}
+
+.paper-grid--three {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.paper-card {
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: var(--spacing-sm);
+  background-color: var(--color-bg);
+}
+
+.paper-card--wide {
+  grid-column: 1 / -1;
+}
+
+.paper-card--pending {
+  border-style: dashed;
+  border-color: var(--color-border-strong);
+  background-color: var(--color-surface);
+}
+
+.paper-title {
+  font-weight: 500;
+  font-size: var(--font-size-base);
+  margin-bottom: 4px;
+  color: var(--color-text-primary);
+}
+
+.paper-card--pending .paper-title {
+  color: var(--color-text-muted);
+}
+
+.paper-desc {
+  font-size: var(--font-size-small);
+  color: var(--color-text-secondary);
+  margin-bottom: 6px;
+}
+
+.paper-meta {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+.paper-meta a {
+  color: var(--color-text-muted);
+  text-decoration: underline;
+  text-decoration-color: var(--color-border);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+
+.paper-meta a:hover {
+  color: var(--color-text-primary);
+  text-decoration-color: var(--color-text-muted);
+}
+
+.card-divider {
+  border: none;
+  border-top: 1px solid var(--color-border);
+  margin: 10px 0;
+}
+
+/* --------------------------------------------------------------------------
+   Problem Tags
+   -------------------------------------------------------------------------- */
+.problem-row {
+  display: flex;
+  gap: var(--spacing-xs);
+  flex-wrap: wrap;
+  margin-top: var(--spacing-sm);
+}
+
+.problem-tag {
+  display: inline-block;
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border-strong);
+  border-radius: 3px;
+  padding: 3px 10px;
+}
+
+.problem-tag--inline {
+  margin-bottom: 8px;
+  font-size: 12px;
+}
+
+/* --------------------------------------------------------------------------
+   Implementation Stack
+   -------------------------------------------------------------------------- */
+.impl-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.impl-item {
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: var(--spacing-sm);
+  background-color: var(--color-bg);
+}
+
+.impl-arrow {
+  text-align: center;
+  color: var(--color-text-muted);
+  padding: 6px 0;
+  font-size: var(--font-size-small);
+}
+
+.impl-name {
+  font-weight: 500;
+  font-size: var(--font-size-base);
+  margin-bottom: 4px;
+  color: var(--color-text-primary);
+}
+
+.impl-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+  border-radius: 3px;
+  padding: 1px 6px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+.impl-desc {
+  font-size: var(--font-size-small);
+  color: var(--color-text-secondary);
+  margin-bottom: 6px;
+}
+
+/* --------------------------------------------------------------------------
+   Hub Cards (mirrored from ttgos-evidence)
+   -------------------------------------------------------------------------- */
+.hub-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+.hub-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: var(--spacing-md);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.hub-card:hover {
+  border-color: var(--color-text-muted);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.hub-card-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  margin-bottom: var(--spacing-sm);
+}
+
+.hub-card-badge {
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #1a7f37;
+  background-color: #E8F5E9;
+  padding: 2px 8px;
+  border-radius: 3px;
+}
+
+.hub-card-bench {
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.hub-card-metric {
+  text-align: center;
+  padding: var(--spacing-sm) 0;
+}
+
+.hub-card-value {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  line-height: 1.2;
+}
+
+.hub-card-label {
+  display: block;
+  font-size: 13px;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 4px;
+}
+
+.hub-card-bars {
+  padding: 0 var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+}
+
+.hub-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.hub-bar-row:last-child {
+  margin-bottom: 0;
+}
+
+.hub-bar-label {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  text-align: right;
+  flex: 0 0 76px;
+  white-space: nowrap;
+}
+
+.hub-bar-row .progress-bar {
+  margin: 0;
+  flex: 1 1 auto;
+}
+
+.hub-bar-value {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  flex: 0 0 40px;
+  text-align: right;
+}
+
+.hub-card-detail {
+  font-size: var(--font-size-small);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.hub-card-detail p {
+  margin-bottom: 2px;
+}
+
+.hub-card-cta {
+  font-size: var(--font-size-small);
+  font-weight: 500;
+  color: var(--color-text-primary);
+  margin-top: auto;
+  padding-top: var(--spacing-sm);
+  border-top: 1px solid var(--color-border);
+}
+
+.hub-card:hover .hub-card-cta {
+  text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------
+   Progress Bars
+   -------------------------------------------------------------------------- */
+.progress-bar {
+  position: relative;
+  width: 100%;
+  height: 8px;
+  background-color: #F0F0F0;
+  border-radius: 4px;
+  margin: 12px 0 8px 0;
+  overflow: visible;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.progress-fill.guard {
+  background-color: #1a7f37;
+}
+
+.progress-fill.baseline {
+  background-color: var(--color-text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   Flow Note
+   -------------------------------------------------------------------------- */
+.flow-note {
+  margin-top: var(--spacing-sm);
+  font-size: var(--font-size-small);
+  color: var(--color-text-secondary);
+  max-width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   In Progress / Next layer
+   -------------------------------------------------------------------------- */
+.flow-layer--next {
+  border-style: dashed;
+  border-color: var(--color-border-strong);
+}
+
+.flow-layer--next .flow-label {
+  border-bottom-style: dashed;
+  border-bottom-color: var(--color-border-strong);
+}
+
+.next-list {
+  list-style: disc;
+  padding-left: 1.4em;
+}
+
+.next-list li {
+  margin-bottom: 0.6em;
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+}
+
+.next-list li::marker {
+  color: var(--color-text-muted);
+}
+
+.next-list li:last-child {
+  margin-bottom: 0;
+}
+
+.next-etc {
+  text-align: right;
+  color: var(--color-text-muted);
+  font-size: 0.85em;
+  margin-top: 0.4em;
+}
+
+/* --------------------------------------------------------------------------
+   Publications (reused from parent)
+   -------------------------------------------------------------------------- */
+.publications {
+  list-style: none;
+}
+
+.publications li {
+  position: relative;
+  padding-left: 1em;
+  margin-bottom: 0.75em;
+  line-height: 1.5;
+}
+
+.publications li::before {
+  content: "·";
+  position: absolute;
+  left: 0;
+  color: var(--color-text-muted);
+}
+
+.publications li:last-child {
+  margin-bottom: 0;
+}
+
+.publications em {
+  font-style: italic;
+}
+
+/* --------------------------------------------------------------------------
+   Footer
+   -------------------------------------------------------------------------- */
+.footer {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: var(--spacing-sm) auto 0 auto;
+  padding: 6px 20px;
+  border-top: 1px solid var(--color-border);
+}
+
+.footer p {
+  font-size: var(--font-size-small);
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+/* --------------------------------------------------------------------------
+   Links
+   -------------------------------------------------------------------------- */
+a {
+  color: var(--color-text-primary);
+  text-decoration: underline;
+  text-decoration-color: var(--color-border);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+
+a:hover {
+  text-decoration-color: var(--color-text-muted);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--color-text-primary);
+  outline-offset: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive
+   -------------------------------------------------------------------------- */
+@media (max-width: 599px) {
+  :root {
+    --spacing-lg: 32px;
+    --spacing-xl: 48px;
+  }
+
+  .page-header h1 {
+    font-size: 1.75rem;
+  }
+
+  .paper-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .paper-grid--three {
+    grid-template-columns: 1fr;
+  }
+
+  .hub-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .hub-card-value {
+    font-size: 2rem;
+  }
+
+  .problem-row {
+    flex-direction: column;
+  }
+
+  .result-number {
+    font-size: 1.75rem;
+  }
+
+  .footer {
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-lg);
+    padding-bottom: var(--spacing-lg);
+  }
+}
+
+@media (min-width: 600px) {
+  main {
+    padding: var(--spacing-xl) 32px;
+  }
+
+  .page-header h1 {
+    font-size: 2.25rem;
+  }
+
+  .footer {
+    padding: var(--spacing-xl) 32px;
+  }
+}
+
+@media (min-width: 1024px) {
+  main {
+    padding: var(--spacing-xl) 20px;
+    padding-top: 96px;
+  }
+
+  .page-header h1 {
+    font-size: 2.5rem;
+  }
+}
