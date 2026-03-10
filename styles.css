@@ -243,6 +243,7 @@ main {
   margin-bottom: 0;
 }
 
+
 .timeline-list strong,
 .research-list strong,
 .software-list strong,
@@ -250,6 +251,12 @@ main {
 .publications strong {
   font-weight: 500;
 }
+
+.tl-items {
+  display: inline-block;
+  vertical-align: top;
+}
+
 
 /* --------------------------------------------------------------------------
    Publications
