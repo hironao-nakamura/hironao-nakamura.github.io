@@ -252,9 +252,12 @@ main {
   font-weight: 500;
 }
 
-.tl-items {
-  display: inline-block;
-  vertical-align: top;
+.tl-cont::before {
+  visibility: hidden;
+}
+
+.tl-ghost {
+  visibility: hidden;
 }
 
 
